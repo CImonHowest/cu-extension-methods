@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ProgrammingExpert.ExtensionMethods.Cons
 {
@@ -7,11 +8,27 @@ namespace ProgrammingExpert.ExtensionMethods.Cons
         static void Main(string[] args)
         {
             int i = 10;
-            int j = 100;
-            bool result = i.IsGreaterThan(j);
+            int j = 10;
 
-            Console.WriteLine($"Is {i} greater than {j}? Answer is: {result}");
+            bool greater = i.IsGreaterThan(j);
+
+            Console.WriteLine($"Is {i} greater than {j}? Answer: {greater}");
+
+
+            List<string> emails = new List<string>
+            {
+                "simon@simonsoenens.be",
+                "simon@pompo@.be",
+                "simon@simonsoenens.testje"
+            };
+
+            foreach (var email in emails)
+            {
+                Console.WriteLine($"Is {email} a valid email address? Answer: {email.IsValidEmail()}");
+            }   
+
             Console.ReadLine();
+
         }
     }
 }
